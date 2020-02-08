@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Login And Registration form</title>
+</head>
+<body>
+    <form action="" class="form">
+        <div class="action">
+            <span class="load show" id="login-action" onclick="openLoginForm()">
+                Login
+            </span>
+            <span class="load" onclick="openRegistrationForm()" id="reg-action">
+                Register
+            </span>
+        </div>
+        <div class="login show-page">
+            <input type="text" placeholder="Username" />
+            <input type="password" placeholder="Password" />
+            <button>Login</button>
+            <a href="#" onclick="openRegistrationForm()">
+                Register
+            </a>
+        </div>
+        <div class="registration">
+            <input type="text" placeholder="Username" />
+            <input type="email" placeholder="Email" />
+            <input type="password" placeholder="Password" />
+            <button>Register</button>
+            <a href="#" onclick="openLoginForm()">Login</a>
+        </div>
+    </form>
+    <script>
+        function openLoginForm() {
+            document.querySelector(".registration").classList.remove("show-page");
+            document.querySelector(".login").classList.add("show-page");
+            document.getElementById("login-action").classList.add("show");
+            document.getElementById("reg-action").classList.remove("show");
+        }
+        function openRegistrationForm() {
+            document.querySelector(".registration").classList.add("show-page");
+            document.querySelector(".login").classList.remove("show-page");
+            document.getElementById("reg-action").classList.add("show");
+            document.getElementById("login-action").classList.remove("show");
+        }
+    </script>
+</body>
+</html>
